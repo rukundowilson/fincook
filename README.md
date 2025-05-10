@@ -38,7 +38,7 @@ To bridge the knowledge and access gap by equipping the local population with:
 | Business Advisory  | Learn how to allocate and grow business capital.               |
 | Learning Center    | Access curated educational material and updates.               |
 
-## 🔧 Tech Stack (Example)
+## 🔧 Tech Stack
 
 * **Frontend:** React / Vue / Next.js
 * **Backend:** Node.js / Express
@@ -48,7 +48,7 @@ To bridge the knowledge and access gap by equipping the local population with:
 ## 🚀 Getting Started
 
 ```bash
-git clone https://github.com/your-username/route2wealth.git
+git clone https://github.com/rukundowilson/route2wealth.git
 cd route2wealth
 npm install
 npm start
