@@ -5,6 +5,7 @@ import { Bars3Icon as MenuIcon, XMarkIcon as XIcon, ChevronDownIcon, ChevronRigh
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '@/app/components/Nav';
+import Footer from '../components/Footer';
 
 export default function Learn() {
   const [activeTab, setActiveTab] = useState('basics');
@@ -421,6 +422,8 @@ export default function Learn() {
                             )}
                           </div>
                         </div>
+                        <Footer/>
                       </div>
+                      
                     );
                   }
