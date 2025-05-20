@@ -6,7 +6,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="col-span-1 md:col-span-2">
-              <div className="text-2xl font-bold text-white">Route<span className="text-emerald-400">2</span>Wealth</div>
+              <div className="text-2xl font-bold text-white">fin<span className="text-emerald-400">cook</span></div>
               <p className="mt-4 text-emerald-200 max-w-md">
                 Empowering local communities to make smarter investment decisions through knowledge, resources, and expert guidance.
               </p>
@@ -32,7 +32,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="mt-12 border-t border-emerald-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-emerald-300">&copy; {new Date().getFullYear()} Route2Wealth. All rights reserved.</p>
+            <p className="text-emerald-300">&copy; {new Date().getFullYear()} fincook. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-6">
               <a href="#" className="text-emerald-300 hover:text-white">
                 Terms of Service

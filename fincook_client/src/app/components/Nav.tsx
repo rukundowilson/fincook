@@ -11,7 +11,7 @@ export default function Nav(){
             <div className="flex justify-between h-16">
               <div className="flex items-center">
                 <div className="flex-shrink-0 flex items-center">
-                  <span className="text-2xl font-bold text-emerald-800">Route<span className="text-emerald-500">2</span>Wealth</span>
+                  <span className="text-2xl font-bold text-emerald-800">fin<span className="text-emerald-500">cook</span></span>
                 </div>
               </div>
               <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">

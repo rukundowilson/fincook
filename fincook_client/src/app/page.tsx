@@ -40,8 +40,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Head>
-        <title>Route2Wealth - Empowering Investment Decisions</title>
-        <meta name="description" content="Route2Wealth - Empowering local communities to make smarter investment decisions" />
+        <title>fincook - Empowering Investment Decisions</title>
+        <meta name="description" content="fincook - Empowering local communities to make smarter investment decisions" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Nav />
@@ -54,7 +54,7 @@ export default function Home() {
               Empowering Smart Investment Decisions
             </h1>
             <p className="mt-6 text-xl text-emerald-100 max-w-3xl">
-              Wealth begins with knowledge. Route2Wealth is the path to financial success through reliable resources, education, and expert guidance.
+              Wealth begins with knowledge. fincook is the path to financial success through reliable resources, education, and expert guidance.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a href="#services" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <h2 className="text-3xl font-extrabold text-emerald-800 sm:text-4xl">
-              Why Choose Route2Wealth?
+              Why Choose fincook?
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-xl text-gray-500">
               Our platform provides everything you need to make informed investment decisions
