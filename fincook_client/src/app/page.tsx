@@ -27,7 +27,6 @@ export default function Home() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Here you would handle the form submission, e.g., send to an API
     alert('Thank you for your request! We will get back to you soon.');
     setFormData({
       name: '',
@@ -59,7 +58,7 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <a href="#services" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
-                Explore Services
+                sign up for free
               </a>
               <a href="#contact" className="px-8 py-3 border border-emerald-200 text-base font-medium rounded-md text-white hover:bg-emerald-700 shadow-md">
                 Request a Quote
