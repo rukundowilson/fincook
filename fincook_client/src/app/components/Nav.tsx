@@ -16,9 +16,9 @@ export default function Nav(){
               </div>
               <div className="hidden md:ml-6 md:flex md:items-center md:space-x-4">
                 <a href="/" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Home</a>
-                <a href="#features" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Features</a>
-                <a href="#services" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Services</a>
+                <a href="/resources" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Resources</a>
                 <a href="/learn" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Learn</a>
+                <a href="/happy/user" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Buy me coffe</a>
                 <a href="#contact" className="ml-4 px-4 py-2 text-sm font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-md">Request a Quote</a>
               </div>
               <div className="flex items-center md:hidden">
@@ -36,11 +36,11 @@ export default function Nav(){
 
           <Disclosure.Panel className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a href="#home" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Home</a>
-              <a href="#features" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Features</a>
-              <a href="#services" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Services</a>
-              <a href="#education" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Learn</a>
-              <a href="#contact" className="block px-3 py-2 text-base font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-md">Request a Quote</a>
+            <a href="/" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Home</a>
+                <a href="/resources" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Resources</a>
+                <a href="/learn" className="px-3 py-2 text-sm font-medium text-emerald-800 hover:text-emerald-500">Learn</a>
+                <a href="/happy/user" className="block px-3 py-2 text-base font-medium text-emerald-800 hover:text-emerald-500 hover:bg-gray-100 rounded-md">Buy me coffe</a>
+                <a href="#contact" className="ml-4 px-4 py-2 text-sm font-medium text-white bg-emerald-500 hover:bg-emerald-600 rounded-md">Request a Quote</a>
             </div>
           </Disclosure.Panel>
         </>

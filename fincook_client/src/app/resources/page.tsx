@@ -50,7 +50,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                         Rwanda wants to achieve its target set in NST 1 and \
                         national development programs.`,
     category: 'Stocks',
-    isLocked: true,
+    isLocked: false,
     author: 'fincook educatin team',
     publishDate: 'may 21, 2025',
     fileSize: '2.8 MB',
@@ -190,7 +190,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                 <div className="flex items-center mb-4 bg-yellow-50 p-4 rounded-lg border border-yellow-200">
                   <Lock className="h-5 w-5 text-yellow-500 mr-3" />
                   <div>
-                    <h3 className="text-sm font-semibold text-gray-800">Premium Resource</h3>
+                    <h3 className="text-sm font-semibold text-gray-800">login required</h3>
                     <p className="text-xs text-gray-600">Login to access this document</p>
                   </div>
                 </div>

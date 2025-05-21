@@ -27,7 +27,7 @@ export default function Footer() {
                 <li className="text-emerald-100">rukundowilson5@gmail.com</li>
                 <li className="text-emerald-100">+250790080450</li>
                 <li className="text-emerald-100">KN 27 Street</li>
-                <li className="text-emerald-100">Investment City, IC 12345</li>
+                <li className="text-emerald-100">Kigali Rwanda</li>
               </ul>
             </div>
           </div>
