@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
 import Cta from "../components/Cta&quote"
+import Toast from '../components/Toast';
 
 interface ResourcePageProps {
   resourceId?: string;
@@ -15,6 +16,8 @@ interface ResourcePageProps {
 export default function SingleResourcePage({ resourceId = '1' }: ResourcePageProps) {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
+  const [toastMessage, setToastMessage] = useState<string>('');
+  const [toastCondition, setToastCondition] = useState<boolean>(false);
 
   // Mock resource data
   const resource = {
@@ -95,6 +98,8 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    setToastMessage("your file is ready for download")
+
   };
   
   const handleBookmark = () => {
@@ -107,6 +112,11 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
 
   return (
     <div className="min-h-screen bg-gray-50">
+
+    {/* toast */}
+    {toastMessage && (
+        <Toast message={toastMessage} conditiion={toastCondition} onclose={() => setToastMessage('')}/>
+    )}
       {/* navbar */}
       <Nav/>
       {/* Back Navigation */}
