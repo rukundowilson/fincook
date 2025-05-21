@@ -18,7 +18,7 @@ export default function BuyMeCoffeePage() {
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSuccess, setIsSuccess] = useState<boolean>(false);
 
-  const predefinedAmounts = [3, 5, 10, 25, 50];
+  const predefinedAmounts = [3000, 5000, 10000, 25000, 50000];
 
   const handleDonationSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -56,7 +56,7 @@ export default function BuyMeCoffeePage() {
 
   const getCoffeeCount = () => {
     const amount = getFinalAmount();
-    return Math.floor(amount / 3);
+    return Math.floor(amount / 3000);
   };
 
   return (
@@ -96,10 +96,7 @@ export default function BuyMeCoffeePage() {
                         }
                       `}
                     >
-                      <span className="font-bold">${amount}</span>
-                      <span className="text-xs mt-1 text-gray-500">
-                        {Math.floor(amount / 3)} coffee{Math.floor(amount / 3) !== 1 ? 's' : ''}
-                      </span>
+                      <span className="font-bold">{amount}rwf</span>
                     </button>
                   ))}
                 </div>
@@ -207,12 +204,12 @@ export default function BuyMeCoffeePage() {
                     ) : (
                       <span className="flex items-center">
                         <CreditCard className="h-5 w-5 mr-2" />
-                        Support with ${getFinalAmount().toFixed(2)}
+                        Support with {getFinalAmount().toFixed(2)}frw
                       </span>
                     )}
                   </button>
                   <p className="text-center text-sm text-gray-500 mt-4">
-                    Secure payment powered by Stripe
+                    Secure payment powered by MTN mobile money
                   </p>
                 </div>
               </form>
@@ -268,7 +265,7 @@ export default function BuyMeCoffeePage() {
                       )}
                     </div>
                     <div className="text-right">
-                      <span className="font-bold text-green-800">${supporter.amount}</span>
+                      <span className="font-bold text-green-800">{supporter.amount}frw</span>
                       <p className="text-xs text-gray-500 mt-1">{supporter.date}</p>
                     </div>
                   </div>
@@ -324,7 +321,7 @@ export default function BuyMeCoffeePage() {
               <p className="text-gray-700">Free investment guides created</p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow">
-              <div className="text-3xl font-bold text-emerald-600 mb-2">$0</div>
+              <div className="text-3xl font-bold text-emerald-600 mb-2">0frw</div>
               <p className="text-gray-700">Cost to access our core resources</p>
             </div>
           </div>
