@@ -34,6 +34,32 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       { id: '6', title: 'Market Analysis Techniques', type: 'pdf' }
     ]
   };
+  const resource2 = {
+    id: '2',
+    title: "Overview of Agricultural Finance in Rwanda",
+    type: 'pdf',
+    description: 'A comprehensive guide for those who want to invest in agriculture in Rwanda.',
+    longDescription: `Agriculture is the most important sector of the \
+                        economy of Rwanda. Eighty six percent (86%) of the \
+                        adult population is involved in agriculture whether \
+                        as its main source of income or employment. \
+                        Since 2014 agriculture has a growth of six percent \
+                        (6%) and in the last quarter of 2018, it contributed \
+                        twenty seven percent (27%) to Rwandan GDP. \
+                        The agriculture sector growth is hence essential if \
+                        Rwanda wants to achieve its target set in NST 1 and \
+                        national development programs.`,
+    category: 'Stocks',
+    isLocked: true,
+    author: 'fincook educatin team',
+    publishDate: 'may 21, 2025',
+    fileSize: '2.8 MB',
+    pageCount: 96,
+    relatedResources: [
+      { id: '6', title: 'Understanding ETFs', type: 'guide' },
+      { id: '6', title: 'Market Analysis Techniques', type: 'pdf' }
+    ]
+  };
 
   const getResourceIcon = (type: string) => {
     switch(type) {
@@ -86,10 +112,14 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       {/* Back Navigation */}
       <div className='max-w-7xl mx-auto'>
       <div className="mx-auto px-4 py-6">
-        <a href="/resources" className="flex items-center text-green-700 hover:text-green-800 font-medium">
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          login
-        </a>
+      <button
+                  onClick={()=>window.location.href="/login"}
+                  className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium"
+                >
+                  <ArrowLeft className="h-4 w-4 mr-2" />
+                  login
+                </button>
+
       </div>
 
       {/* Resource Header */}
@@ -98,17 +128,17 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
           <div className="flex flex-col md:flex-row justify-between">
             <div>
               <div className="flex items-center mb-2">
-                {getResourceIcon(resource.type)}
-                <span className="ml-2 text-sm text-gray-500 uppercase">{resource.type}</span>
-                <span className="ml-4 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">{resource.category}</span>
+                {getResourceIcon(resource2.type)}
+                <span className="ml-2 text-sm text-gray-500 uppercase">{resource2.type}</span>
+                <span className="ml-4 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">{resource2.category}</span>
               </div>
-              <h1 className="text-2xl font-bold text-gray-800 mb-2">{resource.title}</h1>
-              <p className="text-gray-600 mb-4">{resource.description}</p>
+              <h1 className="text-2xl font-bold text-gray-800 mb-2">{resource2.title}</h1>
+              <p className="text-gray-600 mb-4">{resource2.description}</p>
               <div className="flex flex-wrap text-sm text-gray-500 gap-x-6 gap-y-2">
-                <span>By: {resource.author}</span>
-                <span>Published: {resource.publishDate}</span>
-                <span>Size: {resource.fileSize}</span>
-                <span>Pages: {resource.pageCount}</span>
+                <span>By: {resource2.author}</span>
+                <span>Published: {resource2.publishDate}</span>
+                <span>Size: {resource2.fileSize}</span>
+                <span>Pages: {resource2.pageCount}</span>
               </div>
             </div>
             {/* no login required */}
@@ -125,7 +155,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                 </button>
                 <button
                   onClick={noLoginDownload}
-                  className="flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium"
+                  className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium"
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Download
@@ -177,7 +207,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                 </button>
                 <button
                   onClick={handleDownload}
-                  className="flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium"
+                  className="flex items-center bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2 rounded font-medium"
                 >
                   <Download className="h-4 w-4 mr-2" />
                   Download
@@ -201,15 +231,15 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
               <h3 className="text-lg font-semibold text-gray-800 mb-3">Preview Contents</h3>
               <ul className="space-y-2 text-gray-700">
                 <li className="flex items-center">
-                  <div className="w-4 h-4 rounded-full bg-green-600 mr-3"></div>
+                  <div className="w-4 h-4 rounded-full bg-emerald-500 hover:bg-emerald-600 mr-3"></div>
                   Chapter 1: Introduction to the Stock Market
                 </li>
                 <li className="flex items-center">
-                  <div className="w-4 h-4 rounded-full bg-green-600 mr-3"></div>
+                  <div className="w-4 h-4 rounded-full bg-emerald-500 hover:bg-emerald-600 mr-3"></div>
                   Chapter 2: Understanding Stocks and Shares
                 </li>
                 <li className="flex items-center">
-                  <div className="w-4 h-4 rounded-full bg-green-600 mr-3"></div>
+                  <div className="w-4 h-4 rounded-full bg-emerald-500 hover:bg-emerald-600 mr-3"></div>
                   Chapter 3: How to Research Companies
                 </li>
               </ul>
@@ -227,7 +257,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                 </p>
                 <button 
                   onClick={handleLoginClick}
-                  className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium w-full sm:w-auto"
+                  className="bg-emerald-500 hover:bg-emerald-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-medium w-full sm:w-auto"
                 >
                   Log In to Access
                 </button>
