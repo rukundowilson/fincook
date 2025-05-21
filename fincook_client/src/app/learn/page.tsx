@@ -6,7 +6,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
-
+import Cta from "../components/Cta&quote"
 export default function Learn() {
   const [activeTab, setActiveTab] = useState('basics');
 
@@ -412,16 +412,84 @@ export default function Learn() {
                     <ul className="list-disc pl-5">
                       <li>Focus on dividend yield and consistency of payments</li>
                       <li>Look for companies with strong cash flows and stable business models</li>
-                                        <li>Reinvest dividends to compound returns</li>
-                                        <li>Popular among retirees and those seeking passive income</li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            )}
-                          </div>
-                        </div>
+                      <li>Reinvest dividends to compound returns</li>
+                      <li>Popular among retirees and those seeking passive income</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Investment Strategies */}
+          {activeTab === 'risks' && (
+            <div id="investment-strategies" className="prose prose-emerald max-w-none">
+              <h2 className="text-3xl font-bold text-emerald-800 mb-6">Understanding Risks
+              </h2>
+              
+              <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                <h3 className="text-xl font-semibold text-emerald-700 mb-4">What Is Risk?</h3>
+
+                <div className="mb-8">
+                  <p className="mb-3">
+                  At its core, risk is the possibility that an action or decision will lead to a loss or an undesired outcome.
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <ul className="list-disc pl-5">
+                      <li>Uncertainty: Not knowing exactly what will happen.</li>
+                      <li>Impact: The consequence if something goes wrong.</li>
+                    </ul>
+                  </div>
+                  <p className='mb-3'>
+                      For example, driving a car involves the risk of an accident. Starting a business involves the risk of financial loss. Even crossing the street carries some level of risk.
+                    </p>
+                </div>
+
+                <div className="mb-8">
+                  <h4 className="text-lg font-medium text-emerald-800 mb-2">Types of Risk</h4>
+                  <p className="mb-3">
+                  Understanding the different types of risks helps in identifying and managing them effectively. Common categories include:
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h5 className="font-medium text-emerald-700 mb-2">Key Principles:</h5>
+                    <ul className="list-disc pl-5">
+                      <li>Financial Risk: The possibility of losing money or assets.</li>
+                      <li>Strategic Risk: Poor investiment decisions or failure to adapt to changes.</li>
+                      <li>Compliance Risk: Breaking laws or regulations.</li>
+                    </ul>
+                  </div>
+                </div>
+                
+                <div className="mb-8">
+                  <h4 className="text-lg font-medium text-emerald-800 mb-2">
+                    Why Risk Matters
+                  </h4>
+                  <p className="mb-3">
+                  Risk is not always negative. It can also present opportunities. For instance, investing in a new market is risky—but it could yield high returns. The key is not to eliminate all risk, but to understand, measure, and manage it.  
+                  </p>
+                </div>
+
+                <div className="mb-8">
+                  <h4 className="text-lg font-medium text-emerald-800 mb-2">Risk Management</h4>
+                  <p className="mb-3">
+                  Risk management is the process of identifying, assessing, and controlling risks. It involves making informed decisions to minimize potential losses while maximizing opportunities.
+                  </p>
+                  <div className="bg-gray-50 p-4 rounded-lg">
+                    <h5 className="font-medium text-emerald-700 mb-2">Key Principles:</h5>
+                    <ul className="list-disc pl-5">
+                      <li>Identify potential risks</li>
+                      <li>Assess the likelihood and impact of each risk</li>
+                      <li>Implement strategies to mitigate or transfer risks</li>
+                      <li>Monitor and review risks regularly</li>
+                    </ul>
+                  </div>
+                </div>
+                </div>
+              </div>
+                )}
+          </div>
+        </div>
+                        <Cta/>
                         <Footer/>
                       </div>
                       
