@@ -14,11 +14,10 @@ export default function Footer() {
             <div>
               <h3 className="text-emerald-300 font-medium mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="#home" className="text-emerald-100 hover:text-white">Home</a></li>
-                <li><a href="#features" className="text-emerald-100 hover:text-white">Features</a></li>
-                <li><a href="#services" className="text-emerald-100 hover:text-white">Services</a></li>
-                <li><a href="#education" className="text-emerald-100 hover:text-white">Education</a></li>
-                <li><a href="#contact" className="text-emerald-100 hover:text-white">Contact</a></li>
+                <li><a href="/" className="px-3 py-2 text-sm font-medium text-emerald-100">Home</a></li>
+                <li><a href="/resources" className="px-3 py-2 text-sm font-medium text-emerald-100">Resources</a></li>
+                <li><a href="/learn" className="px-3 py-2 text-sm font-medium text-emerald-100">Learn</a></li>
+                <li><a href="/happy/user" className="block px-3 py-2 text-base font-medium text-emerald-100 hover:bg-gray-100 rounded-md">Buy me coffe</a></li>                
               </ul>
             </div>
             <div>
