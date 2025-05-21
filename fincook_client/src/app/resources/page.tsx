@@ -1,5 +1,5 @@
 "use client";
-import { ArrowLeft, Download, Lock, Share2, Bookmark, FileText, BookOpen, Video } from 'lucide-react';
+import { ArrowLeft, Download, Lock, Share2, Bookmark, FileText, BookOpen, Video, Unlock } from 'lucide-react';
 import { useState } from 'react';
 import { Disclosure } from '@headlessui/react';
 import Head from 'next/head';
@@ -49,20 +49,28 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
   };
 
   const handleLoginClick = () => {
-    // In a real app, this would redirect to login page or open a login modal
     setIsLoggedIn(true);
   };
 
   const handleDownload = () => {
     if (!isLoggedIn) {
-      // Show login modal or redirect to login page
       alert('Please log in to download this resource');
     } else {
-      // Download logic
       console.log(`Downloading resource: ${resource.title}`);
     }
   };
-
+  const noLoginDownload = () => {
+    const fileName = "documents/fincook_agriculture_finance.pdf";
+    const fileUrl = `/${fileName}`;
+  
+    const link = document.createElement("a");
+    link.href = fileUrl;
+    link.download = fileName.split("/").pop() || "download"; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+  
   const handleBookmark = () => {
     if (!isLoggedIn) {
       alert('Please log in to bookmark this resource');
@@ -76,15 +84,60 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       {/* navbar */}
       <Nav/>
       {/* Back Navigation */}
-      <div className="container mx-auto px-4 py-6">
+      <div className='max-w-7xl mx-auto'>
+      <div className="mx-auto px-4 py-6">
         <a href="/resources" className="flex items-center text-green-700 hover:text-green-800 font-medium">
           <ArrowLeft className="h-4 w-4 mr-2" />
-          Back to Resources
+          login
         </a>
       </div>
 
       {/* Resource Header */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="mx-auto px-4 py-6">
+        <div className="bg-white rounded-lg shadow-md p-6">
+          <div className="flex flex-col md:flex-row justify-between">
+            <div>
+              <div className="flex items-center mb-2">
+                {getResourceIcon(resource.type)}
+                <span className="ml-2 text-sm text-gray-500 uppercase">{resource.type}</span>
+                <span className="ml-4 text-xs bg-green-100 text-green-800 px-2 py-1 rounded">{resource.category}</span>
+              </div>
+              <h1 className="text-2xl font-bold text-gray-800 mb-2">{resource.title}</h1>
+              <p className="text-gray-600 mb-4">{resource.description}</p>
+              <div className="flex flex-wrap text-sm text-gray-500 gap-x-6 gap-y-2">
+                <span>By: {resource.author}</span>
+                <span>Published: {resource.publishDate}</span>
+                <span>Size: {resource.fileSize}</span>
+                <span>Pages: {resource.pageCount}</span>
+              </div>
+            </div>
+            {/* no login required */}
+            <div className="mt-6 md:mt-0 flex flex-col md:items-end">
+              <div className="flex space-x-2">
+                <button
+                  onClick={handleBookmark}
+                  className={`p-2 rounded ${isBookmarked ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-600'} hover:bg-green-200`}
+                >
+                  <Bookmark className="h-5 w-5" />
+                </button>
+                <button className="p-2 rounded bg-gray-100 text-gray-600 hover:bg-gray-200">
+                  <Share2 className="h-5 w-5" />
+                </button>
+                <button
+                  onClick={noLoginDownload}
+                  className="flex items-center bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded font-medium"
+                >
+                  <Download className="h-4 w-4 mr-2" />
+                  Download
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Resource login required */}
+      <div className="mx-auto px-4 py-6">
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="flex flex-col md:flex-row justify-between">
             <div>
@@ -136,7 +189,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       </div>
 
       {/* Content Preview and Login CTA */}
-      <div className="container mx-auto px-4 py-6">
+      <div className="mx-auto px-4 py-6">
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           {/* Resource preview section */}
           <div className="p-6">
@@ -188,7 +241,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       </div>
 
       {/* Related Resources */}
-      <div className="container mx-auto px-4 py-6 mb-12">
+      <div className="mx-auto px-4 py-6 mb-12">
         <h2 className="text-xl font-bold text-gray-800 mb-6">Related Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resource.relatedResources.map((related) => (
@@ -205,6 +258,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
             </a>
           ))}
         </div>
+      </div>
       </div>
       {/* Call to Action */}
       <Cta/>
