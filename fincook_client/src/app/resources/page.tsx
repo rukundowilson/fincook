@@ -8,13 +8,14 @@ import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
 import Cta from "../components/Cta&quote"
 import Toast from '../components/Toast';
+import RwandaInvestmentGrades from '@/app/components/grades/GradeCompanies';
 
 interface ResourcePageProps {
   resourceId?: string;
 }
 
 export default function SingleResourcePage({ resourceId = '1' }: ResourcePageProps) {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
   const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
   const [toastCondition, setToastCondition] = useState<boolean>(false);
@@ -177,6 +178,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
       </div>
 
       {/* Resource login required */}
+
       <div className="mx-auto px-4 py-6">
         <div className="bg-white rounded-lg shadow-md p-6">
           <div className="flex flex-col md:flex-row justify-between">
@@ -227,6 +229,16 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
           </div>
         </div>
       </div>
+
+      {/* grading component */}
+      <RwandaInvestmentGrades 
+        isLoggedIn={isLoggedIn}
+        isBookmarked={isBookmarked}
+        onNavigateToGrades={() => {}}
+        onBookmark={handleBookmark}
+        onShare={() => {}}
+        onLogin ={handleLoginClick}
+      />
 
       {/* Content Preview and Login CTA */}
       <div className="mx-auto px-4 py-6">
