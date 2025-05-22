@@ -15,7 +15,7 @@ interface ResourcePageProps {
 }
 
 export default function SingleResourcePage({ resourceId = '1' }: ResourcePageProps) {
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
   const [toastCondition, setToastCondition] = useState<boolean>(false);
