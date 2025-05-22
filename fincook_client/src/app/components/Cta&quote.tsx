@@ -1,5 +1,5 @@
 "use client";
-import { Bars3Icon as MenuIcon, XMarkIcon as XIcon, ChevronDownIcon, ChartBarIcon, AcademicCapIcon, CurrencyDollarIcon, CheckBadgeIcon as BadgeCheckIcon, CalendarIcon, UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
+import {UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 export default function Cta() {
     const [formData, setFormData] = useState({

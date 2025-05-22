@@ -1,8 +1,5 @@
 "use client";
 import { useState } from 'react';
-import { Disclosure } from '@headlessui/react';
-import { Bars3Icon as MenuIcon, XMarkIcon as XIcon, ChevronDownIcon, ChevronRightIcon, BookOpenIcon, AcademicCapIcon, ChartBarSquareIcon as ChartBarIcon, CurrencyDollarIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
-import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
@@ -232,13 +229,13 @@ export default function BuyMeCoffeePage() {
                   </p>
                 </div>
               )}
-              <a 
+              <Link 
                 href="/"
                 className="inline-flex items-center text-green-600 font-medium hover:text-emerald-700"
               >
                 Return to Home
                 <ArrowRight className="h-4 w-4 ml-1" />
-              </a>
+              </Link>
             </div>
           )}
           

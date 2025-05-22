@@ -1,11 +1,12 @@
 "use client"
 import { useState } from 'react';
-import { Disclosure, Transition } from '@headlessui/react';
-import { Bars3Icon as MenuIcon, XMarkIcon as XIcon, ChevronDownIcon, ChartBarIcon, AcademicCapIcon, CurrencyDollarIcon, CheckBadgeIcon as BadgeCheckIcon, CalendarIcon, UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
+import {ChevronDownIcon, ChartBarIcon, AcademicCapIcon, CurrencyDollarIcon, CheckBadgeIcon as BadgeCheckIcon, CalendarIcon, UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon} from '@heroicons/react/24/outline';
 import Head from 'next/head';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Cta from './components/Cta&quote';
+import Link from 'next/link';
+
 
 export default function Home() {
   const [formData, setFormData] = useState({
@@ -15,14 +16,6 @@ export default function Home() {
     message: '',
     consultationType: 'virtual'
   });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
-      [name]: value
-    }));
-  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -57,12 +50,12 @@ export default function Home() {
               Wealth begins with knowledge. fincook is the path to financial success through reliable resources, education, and expert guidance.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <a href="#services" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
+              <Link href="#services" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
                 sign up for free
-              </a>
-              <a href="#contact" className="px-8 py-3 border border-emerald-200 text-base font-medium rounded-md text-white hover:bg-emerald-700 shadow-md">
+              </Link>
+              <Link href="#contact" className="px-8 py-3 border border-emerald-200 text-base font-medium rounded-md text-white hover:bg-emerald-700 shadow-md">
                 Request a Quote
-              </a>
+              </Link>
             </div>
           </div>
           <div className="lg:w-1/2 flex justify-center">
@@ -219,10 +212,10 @@ export default function Home() {
                 <p className="mt-2 text-gray-600">
                   Learn fundamental investing concepts with our beginner-friendly guides and courses.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
+                <Link href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
                   Learn more
                   <ChevronDownIcon className="ml-1 h-4 w-4 transform rotate-270" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -235,10 +228,10 @@ export default function Home() {
                 <p className="mt-2 text-gray-600">
                   Participate in live and recorded training sessions with our financial experts.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
+                <Link href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
                   See schedule
                   <ChevronDownIcon className="ml-1 h-4 w-4 transform rotate-270" />
-                </a>
+                </Link>
               </div>
             </div>
 
@@ -251,10 +244,10 @@ export default function Home() {
                 <p className="mt-2 text-gray-600">
                   Get a customized education plan based on your experience level and investment goals.
                 </p>
-                <a href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
+                <Link href="#" className="mt-4 inline-flex items-center text-emerald-600 hover:text-emerald-500">
                   Get started
                   <ChevronDownIcon className="ml-1 h-4 w-4 transform rotate-270" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>

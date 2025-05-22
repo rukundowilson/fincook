@@ -1,8 +1,6 @@
 "use client";
-import { ArrowLeft, Download, Lock, Share2, Bookmark, FileText, BookOpen, Video, Unlock } from 'lucide-react';
+import { ArrowLeft, Download, Lock, Share2, Bookmark, FileText, BookOpen, Video } from 'lucide-react';
 import { useState } from 'react';
-import { Disclosure } from '@headlessui/react';
-import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
@@ -284,7 +282,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                   Log In to Access
                 </button>
                 <p className="mt-4 text-sm text-gray-500">
-                  Don't have an account? <a href="#" className="text-green-600 hover:underline">Sign up for free</a>
+                  Don't have an account? <Link href="#" className="text-green-600 hover:underline">Sign up for free</Link>
                 </p>
               </div>
             </div>
@@ -297,7 +295,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
         <h2 className="text-xl font-bold text-gray-800 mb-6">Related Resources</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {resource.relatedResources.map((related) => (
-            <a 
+            <Link 
               key={related.id}
               href={`/resources/${related.id}`}
               className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-md transition-shadow"
@@ -307,7 +305,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
                 <span className="ml-2 text-xs text-gray-500 uppercase">{related.type}</span>
               </div>
               <h3 className="text-lg font-semibold text-gray-800 hover:text-green-600">{related.title}</h3>
-            </a>
+            </Link>
           ))}
         </div>
       </div>

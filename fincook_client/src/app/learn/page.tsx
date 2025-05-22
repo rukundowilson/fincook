@@ -1,7 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Disclosure } from '@headlessui/react';
-import { Bars3Icon as MenuIcon, XMarkIcon as XIcon, ChevronDownIcon, ChevronRightIcon, BookOpenIcon, AcademicCapIcon, ChartBarSquareIcon as ChartBarIcon, CurrencyDollarIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
+import { ChevronRightIcon, BookOpenIcon, AcademicCapIcon, ChartBarSquareIcon as ChartBarIcon, CurrencyDollarIcon, ClockIcon, ShieldCheckIcon } from '@heroicons/react/24/outline';
 import Head from 'next/head';
 import Link from 'next/link';
 import Nav from '@/app/components/Nav';
@@ -39,10 +38,10 @@ export default function Learn() {
           </p>
           <div className="mt-10">
             <div className="inline-flex rounded-md shadow">
-              <a href="#investment-basics" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-700 bg-white hover:bg-emerald-50">
+              <Link href="#investment-basics" className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-emerald-700 bg-white hover:bg-emerald-50">
                 Get Started
                 <ChevronRightIcon className="ml-2 -mr-1 h-5 w-5" aria-hidden="true" />
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -64,8 +63,8 @@ export default function Learn() {
                   Start with the fundamentals of investing, learn key terminology, and understand basic investment concepts.
                 </p>
                 <div className="mt-4">
-                  <a href="#investment-basics" className="text-emerald-600 font-medium hover:text-emerald-500">Begin here →</a>
-                </div>
+                    <Link href="#investment-basics" className="text-emerald-600 font-medium hover:text-emerald-500">Begin here →</Link>
+                  </div>
               </div>
               <div className="lg:w-1/3 p-8 bg-white">
                 <div className="h-12 w-12 rounded-full bg-emerald-100 flex items-center justify-center mb-4">
@@ -76,7 +75,7 @@ export default function Learn() {
                   Explore different types of investments, understand market dynamics, and learn about portfolio diversification.
                 </p>
                 <div className="mt-4">
-                  <a href="#investment-types" className="text-emerald-600 font-medium hover:text-emerald-500">Explore more →</a>
+                  <Link href="#investment-types" className="text-emerald-600 font-medium hover:text-emerald-500">Explore more →</Link>
                 </div>
               </div>
               <div className="lg:w-1/3 p-8 bg-emerald-50">
@@ -88,7 +87,7 @@ export default function Learn() {
                   Master advanced strategies, risk management techniques, and learn how to analyze investment opportunities.
                 </p>
                 <div className="mt-4">
-                  <a href="#investment-strategies" className="text-emerald-600 font-medium hover:text-emerald-500">Advance further →</a>
+                  <Link href="#investment-strategies" className="text-emerald-600 font-medium hover:text-emerald-500">Advance further →</Link>
                 </div>
               </div>
             </div>

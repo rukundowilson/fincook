@@ -1,20 +1,6 @@
 import React from 'react';
 import { Lock, Bookmark, Share2, TrendingUp, Building2, Star, ArrowRight } from 'lucide-react';
 
-interface InvestmentResource {
-  id: string;
-  title: string;
-  description: string;
-  type: 'investment-guide' | 'market-analysis' | 'company-ratings';
-  category: string;
-  author: string;
-  publishDate: string;
-  isLocked: boolean;
-  companyCount: number;
-  topRatedCompanies: string[];
-  lastUpdated: string;
-}
-
 interface RwandaInvestmentGradesProps {
   isLoggedIn: boolean;
   isBookmarked: boolean;
@@ -33,19 +19,6 @@ const RwandaInvestmentGrades: React.FC<RwandaInvestmentGradesProps> = ({
   onShare,
   onLogin
 }) => {
-  const getResourceIcon = (type: string) => {
-    switch (type) {
-      case 'investment-guide':
-        return <TrendingUp className="h-6 w-6 text-emerald-500" />;
-      case 'market-analysis':
-        return <Building2 className="h-6 w-6 text-blue-500" />;
-      case 'company-ratings':
-        return <Star className="h-6 w-6 text-yellow-500" />;
-      default:
-        return <TrendingUp className="h-6 w-6 text-emerald-500" />;
-    }
-  };
-
   const explainGrade = {
     companyCount: 20,
     topRatedCompanies: ['Inyange', "Bralirwa", "Cimerwa"],

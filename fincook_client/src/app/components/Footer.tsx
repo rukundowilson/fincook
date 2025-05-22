@@ -1,4 +1,6 @@
 "use client"
+import Link from 'next/link';
+
 
 export default function Footer() {
     return (
@@ -14,10 +16,10 @@ export default function Footer() {
             <div>
               <h3 className="text-emerald-300 font-medium mb-4">Quick Links</h3>
               <ul className="space-y-2">
-                <li><a href="/" className="px-3 py-2 text-sm font-medium text-emerald-100">Home</a></li>
-                <li><a href="/resources" className="px-3 py-2 text-sm font-medium text-emerald-100">Resources</a></li>
-                <li><a href="/learn" className="px-3 py-2 text-sm font-medium text-emerald-100">Learn</a></li>
-                <li><a href="/happy/user" className="block px-3 py-2 text-base font-medium text-emerald-100 hover:bg-gray-100 rounded-md">Buy me coffe</a></li>                
+                <li><Link href="/" className="px-3 py-2 text-sm font-medium text-emerald-100">Home</Link></li>
+                <li><Link href="/resources" className="px-3 py-2 text-sm font-medium text-emerald-100">Resources</Link></li>
+                <li><Link href="/learn" className="px-3 py-2 text-sm font-medium text-emerald-100">Learn</Link></li>
+                <li><Link href="/happy/user" className="block px-3 py-2 text-base font-medium text-emerald-100 hover:bg-gray-100 rounded-md">Buy me coffe</Link></li>                
               </ul>
             </div>
             <div>
@@ -33,12 +35,12 @@ export default function Footer() {
           <div className="mt-12 border-t border-emerald-800 pt-8 flex flex-col md:flex-row justify-between items-center">
             <p className="text-emerald-300">&copy; {new Date().getFullYear()} fincook. All rights reserved.</p>
             <div className="mt-4 md:mt-0 flex space-x-6">
-              <a href="#" className="text-emerald-300 hover:text-white">
+              <Link href="#" className="text-emerald-300 hover:text-white">
                 Terms of Service
-              </a>
-              <a href="#" className="text-emerald-300 hover:text-white">
+              </Link>
+              <Link href="#" className="text-emerald-300 hover:text-white">
                 Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </div>
