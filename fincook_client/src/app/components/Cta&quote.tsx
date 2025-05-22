@@ -1,6 +1,8 @@
 "use client";
 import {UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import React from 'react';
+
 export default function Cta() {
     const [formData, setFormData] = useState({
         name: '',

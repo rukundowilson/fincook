@@ -1,12 +1,12 @@
+"use client"
 import { useState } from "react";
+import React from 'react';
 
 interface ToastProps{
     message : string,
-    conditiion : boolean,
-    onclose : ()=> void
 }
 
-const Toast = ({ message, conditiion, onclose }: ToastProps) => {
+const Toast = ({ message }: ToastProps) => {
   const [visible, setVisible] = useState(true);
   if (!visible) return null;
 

@@ -8,15 +8,10 @@ import Cta from "../components/Cta&quote"
 import Toast from '../components/Toast';
 import RwandaInvestmentGrades from '@/app/components/grades/GradeCompanies';
 
-interface ResourcePageProps {
-  resourceId?: string;
-}
-
-export default function SingleResourcePage({ resourceId = '1' }: ResourcePageProps) {
+export default function SingleResourcePage() {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [isBookmarked, setIsBookmarked] = useState<boolean>(false);
   const [toastMessage, setToastMessage] = useState<string>('');
-  const [toastCondition, setToastCondition] = useState<boolean>(false);
 
   // Mock resource data
   const resource = {
@@ -114,7 +109,7 @@ export default function SingleResourcePage({ resourceId = '1' }: ResourcePagePro
 
     {/* toast */}
     {toastMessage && (
-        <Toast message={toastMessage} conditiion={toastCondition} onclose={() => setToastMessage('')}/>
+        <Toast message={toastMessage}/>
     )}
       {/* navbar */}
       <Nav/>

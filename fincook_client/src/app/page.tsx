@@ -1,5 +1,4 @@
 "use client"
-import { useState } from 'react';
 import {ChevronDownIcon, ChartBarIcon, AcademicCapIcon, CurrencyDollarIcon, CheckBadgeIcon as BadgeCheckIcon, CalendarIcon, UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon} from '@heroicons/react/24/outline';
 import Head from 'next/head';
 import Nav from './components/Nav';
@@ -9,26 +8,6 @@ import Link from 'next/link';
 
 
 export default function Home() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: '',
-    consultationType: 'virtual'
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your request! We will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: '',
-      consultationType: 'virtual'
-    });
-  };
 
   return (
     <div className="min-h-screen bg-gray-50">

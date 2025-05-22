@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
 import Cta from "../components/Cta&quote"
+import React from 'react';
+
 export default function Learn() {
   const [activeTab, setActiveTab] = useState('basics');
 

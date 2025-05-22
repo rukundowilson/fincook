@@ -1,7 +1,8 @@
+"use client"
 import { Disclosure } from '@headlessui/react';
 import { Bars3Icon as MenuIcon, XMarkIcon as XIcon } from '@heroicons/react/24/outline';
 import Link from 'next/link';
-
+import React from 'react';
 
 export default function Nav(){
     return (
