@@ -1,5 +1,9 @@
 "use client"
 import React, { useState } from 'react';
+import Link from 'next/link';
+import Nav from '@/app/components/Nav';
+import Footer from '../components/Footer';
+import Cta from "../components/Cta&quote"
 
 interface FormData {
   firstName: string;
@@ -71,46 +75,26 @@ const SignupPage: React.FC = () => {
   }
 
   return (
+    <>
+    {/* Header */}
+    <Nav/>
     <div className="min-h-screen relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
-        <div className="absolute top-1/2 right-10 w-24 h-24 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
-        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-emerald-500/10 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
+        <div className="absolute top-1/2 right-10 w-24 h-24 bg-emerald-500/10 rounded-full animate-bounce" style={{ animationDelay: '1s', animationDuration: '4s' }}></div>
+        <div className="absolute bottom-20 left-1/4 w-40 h-40 bg-emerald-500/10 rounded-full animate-bounce" style={{ animationDelay: '2s', animationDuration: '5s' }}></div>
       </div>
 
-      {/* Header */}
-      <header className="relative z-10 bg-white/95 backdrop-blur-sm shadow-lg">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
-              <div className="flex-shrink-0 flex items-center">
-                <div className="w-8 h-8 bg-emerald-600 rounded-full flex items-center justify-center mr-2">
-                  <span className="text-white font-bold text-sm">f</span>
-                </div>
-                <span className="text-xl font-bold text-emerald-600">fincook</span>
-              </div>
-            </div>
-            <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-4">
-                <a href="#" className="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Home</a>
-                <a href="#" className="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Resources</a>
-                <a href="#" className="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Learn</a>
-                <a href="#" className="text-gray-700 hover:text-emerald-600 px-3 py-2 text-sm font-medium transition-colors">Buy me coffee</a>
-              </div>
-            </div>
-          </div>
-        </nav>
-      </header>
+      
 
-      {/* Main Content - Two-Sided Card */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-12">
         <div className="max-w-6xl w-full">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <div className="flex flex-col lg:flex-row min-h-[700px]">
               
               {/* Left Side - Header/Branding Content */}
-              <div className="lg:w-1/2 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
+              <div className="lg:w-1/2 bg-emerald-500 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden">
                 {/* Background decorations */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
@@ -344,7 +328,10 @@ const SignupPage: React.FC = () => {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
+    </>
   );
 };
 
