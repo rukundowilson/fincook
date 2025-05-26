@@ -71,7 +71,7 @@ const SignupPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 relative overflow-hidden">
+    <div className="min-h-screen relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white/10 rounded-full animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
@@ -214,7 +214,7 @@ const SignupPage: React.FC = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                          placeholder="John"
+                          placeholder="first name"
                         />
                       </div>
                       <div>
@@ -229,7 +229,7 @@ const SignupPage: React.FC = () => {
                           onChange={handleInputChange}
                           required
                           className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                          placeholder="Doe"
+                          placeholder="last name"
                         />
                       </div>
                     </div>
@@ -266,28 +266,6 @@ const SignupPage: React.FC = () => {
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
-
-                    {/* Investment Experience */}
-                    <div>
-                      <label htmlFor="investmentExperience" className="block text-sm font-medium text-gray-700 mb-2">
-                        Investment Experience *
-                      </label>
-                      <select
-                        id="investmentExperience"
-                        name="investmentExperience"
-                        value={formData.investmentExperience}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      >
-                        <option value="">Select your experience level</option>
-                        <option value="beginner">Beginner (0-1 years)</option>
-                        <option value="intermediate">Intermediate (2-5 years)</option>
-                        <option value="advanced">Advanced (5+ years)</option>
-                        <option value="professional">Professional Investor</option>
-                      </select>
-                    </div>
-
                     {/* Investment Goals */}
                     <div>
                       <label htmlFor="investmentGoals" className="block text-sm font-medium text-gray-700 mb-2">
@@ -307,27 +285,6 @@ const SignupPage: React.FC = () => {
                         <option value="income">Generate Income</option>
                         <option value="short-term">Short-term Growth</option>
                         <option value="diversification">Portfolio Diversification</option>
-                      </select>
-                    </div>
-
-                    {/* Risk Tolerance */}
-                    <div>
-                      <label htmlFor="riskTolerance" className="block text-sm font-medium text-gray-700 mb-2">
-                        Risk Tolerance *
-                      </label>
-                      <select
-                        id="riskTolerance"
-                        name="riskTolerance"
-                        value={formData.riskTolerance}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      >
-                        <option value="">Select your risk tolerance</option>
-                        <option value="conservative">Conservative (Low Risk)</option>
-                        <option value="moderate">Moderate (Medium Risk)</option>
-                        <option value="aggressive">Aggressive (High Risk)</option>
-                        <option value="very-aggressive">Very Aggressive (Very High Risk)</option>
                       </select>
                     </div>
 
