@@ -29,7 +29,7 @@ export default function Home() {
               Wealth begins with knowledge. fincook is the path to financial success through reliable resources, education, and expert guidance.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Link href="#services" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
+              <Link href="/signup" className="px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-emerald-500 hover:bg-emerald-400 shadow-md">
                 sign up for free
               </Link>
               <Link href="#contact" className="px-8 py-3 border border-emerald-200 text-base font-medium rounded-md text-white hover:bg-emerald-700 shadow-md">
