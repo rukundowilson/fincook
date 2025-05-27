@@ -1,9 +1,7 @@
 "use client"
 import React, { useState } from 'react';
-import Link from 'next/link';
 import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
-import Cta from "../components/Cta&quote"
 
 interface FormData {
   firstName: string;
@@ -94,7 +92,7 @@ const SignupPage: React.FC = () => {
             <div className="flex flex-col lg:flex-row min-h-[700px]">
               
               {/* Left Side - Header/Branding Content */}
-              <div className="lg:w-1/2 bg-emerald-500 p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden hidden lg:block">
+              <div className="lg:w-1/2 bg-emerald-700 hover:bg-emerald-600 text-white font-semibold p-8 lg:p-12 flex flex-col justify-center relative overflow-hidden hidden lg:block">
                 {/* Background decorations */}
                 <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
                 <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
