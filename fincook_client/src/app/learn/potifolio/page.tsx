@@ -5,7 +5,7 @@ import {
   BookOpen,
   PieChart,
   DollarSign,
-  BarChart, // <-- use BarChart instead of BarChart3
+  BarChart,
   Home,
   User,
   Target,
