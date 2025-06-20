@@ -7,7 +7,7 @@ const port = 8080;
 app.use(express.json());
 app.use(cors())
 
-app.get("/", (req,res)=> {
+app.get("/api/test_connection", (req,res)=> {
       res.status(200).json('Hello World from Node.js App!');
 
 });
