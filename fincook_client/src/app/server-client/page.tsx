@@ -1,11 +1,20 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { json } from "stream/consumers";
+
+interface databaseCommunication{
+    message : String,
+    solution : any
+}
 
 export default function TestServerLifecycle() {
     const [serverStatus, setServerStatus] = useState("");
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
+    const [databaseMessage, setDatabaseMessage] = useState<databaseCommunication>();
+    const [databaseMessageErr, setDatabaseMessageErr] = useState<String>();
+
 
     const TestServerClientConnection = async () => {
         try {
@@ -22,8 +31,26 @@ export default function TestServerLifecycle() {
         }
     };
 
+    const dataBaseConnection = async () =>{
+        try{
+            const response = await fetch("http://localhost:8080/api/db_connection/1");
+            if (!response.ok){
+                console.log("something is wrong with your call")
+                setDatabaseMessageErr("something is wrong with your call")
+            }
+            const data = await response.json();
+            console.log(data )
+            setDatabaseMessage(data)
+        }
+        catch(error){
+            console.log("api call is invalid or your internet is down")
+            setDatabaseMessageErr("api call is invalid or your internet is down")
+        }
+    }
+
     useEffect(() => {
         TestServerClientConnection();
+        dataBaseConnection()
     }, []);
 
     return (
@@ -44,6 +71,16 @@ export default function TestServerLifecycle() {
                     ) : (
                         <div className="bg-green-100 text-green-800 p-3 rounded-lg shadow">
                             ✅ Server Response: <strong>{serverStatus}</strong>
+                        </div>
+                    )}
+                    {databaseMessage && (
+                        <div className="bg-green-100 text-green-800 mt-4 p-3 rounded-lg shadow">
+                            ✅ database response: <strong>{databaseMessage.message} : solution 🙄 { databaseMessage.solution} </strong>
+                        </div>
+                    )}
+                    {databaseMessageErr && (
+                        <div className="text-red-500 mt-4 p-3">
+                            😂 database err : <strong>{databaseMessageErr} </strong>
                         </div>
                     )}
                 </div>
