@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { json } from "stream/consumers";
 
 interface databaseCommunication{
     message : String,
@@ -33,7 +32,7 @@ export default function TestServerLifecycle() {
 
     const dataBaseConnection = async () =>{
         try{
-            const response = await fetch("http://localhost:8080/api/db_connection/1");
+            const response = await fetch("http://localhost:8080/api/db_connection/");
             if (!response.ok){
                 console.log("something is wrong with your call")
                 setDatabaseMessageErr("something is wrong with your call")

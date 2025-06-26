@@ -1,12 +1,15 @@
-const express = require("express");
-const cors = require("cors");
-const db = require("./src/config/db")
+import express from "express";
+import cors from "cors";
+import db from "./src/config/db.js";
+import quote from "./src/routes/quote.js"
 
 const app = express();
 const port = 8080;
 
 app.use(express.json());
 app.use(cors())
+
+app.use("/quote",quote);
 
 // test db life cycle
 app.get("/api/db_connection", async (req, res) => {
