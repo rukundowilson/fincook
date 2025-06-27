@@ -1,0 +1,18 @@
+services:
+  backend:
+    build: ./fincook_server
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./fincook_server:/src
+    environment:
+      - NODE_ENV=development
+
+  frontend:
+    build: ./fincook_client
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./fincook_client:/src
+    environment:
+      - NODE_ENV=development
