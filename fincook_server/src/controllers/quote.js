@@ -8,7 +8,7 @@ export default async function requestQuote(req, res) {
         message,
         consultationType,
     } = req.body;
-
+    console.log(name,email,phone,message,consultationType)
     if (!name || !email || !phone || !message || !consultationType) {
         return res.status(400).json({
             message: "❌ Service declined. Please fill in all required fields."

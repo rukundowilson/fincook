@@ -7,6 +7,12 @@ services:
       - ./fincook_server:/src
     environment:
       - NODE_ENV=development
+      - DB_HOST=mysql
+      - DB_USER=root
+      - DB_PASSWORD=468161Ro@
+      - DB_NAME=fincook
+    depends_on:
+      - mysql
 
   frontend:
     build: ./fincook_client
@@ -16,3 +22,16 @@ services:
       - ./fincook_client:/src
     environment:
       - NODE_ENV=development
+
+  mysql:                  
+    image: mysql:8
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: "468161Ro@"
+      MYSQL_DATABASE: fincook
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

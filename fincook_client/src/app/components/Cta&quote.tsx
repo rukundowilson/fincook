@@ -2,6 +2,7 @@
 import {UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
 import React from 'react';
+import api from '../util/axios';
 
 export default function Cta() {
     const [formData, setFormData] = useState({
@@ -12,16 +13,24 @@ export default function Cta() {
         consultationType: 'virtual'
       });
     
-      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+      const handleInputChange =(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prevState) => ({
           ...prevState,
           [name]: value
         }));
       };
-    
-      const handleSubmit = (e: React.FormEvent) => {
+
+        
+      const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        try{
+          const response = await api.post("/quote/new",formData);
+          console.log(response)
+        }
+        catch(err){
+          console.log(err)
+        }
         console.log('Form submitted:', formData);
         // Here you would handle the form submission, e.g., send to an API
         alert('Thank you for your request! We will get back to you soon.');

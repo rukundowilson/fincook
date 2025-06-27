@@ -9,7 +9,7 @@ const port = 8080;
 app.use(express.json());
 app.use(cors())
 
-app.use("/quote",quote);
+app.use("/api/quote",quote);
 
 // test db life cycle
 app.get("/api/db_connection", async (req, res) => {
