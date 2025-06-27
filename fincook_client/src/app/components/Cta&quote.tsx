@@ -3,6 +3,8 @@ import {UserIcon, ChatBubbleOvalLeftIcon as ChatAlt2Icon, EnvelopeIcon as MailIc
 import { useState } from 'react';
 import React from 'react';
 import api from '../util/axios';
+import Toast from './Toast';
+
 
 export default function Cta() {
     const [formData, setFormData] = useState({
@@ -12,6 +14,8 @@ export default function Cta() {
         message: '',
         consultationType: 'virtual'
       });
+      const [succesMessage, setSuccessMessage] =useState<any>()
+      const [errorMessage, setErrorMessage] =useState<String>()
     
       const handleInputChange =(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -27,13 +31,11 @@ export default function Cta() {
         try{
           const response = await api.post("/quote/new",formData);
           console.log(response)
+          setSuccessMessage(response.data)
         }
         catch(err){
           console.log(err)
         }
-        console.log('Form submitted:', formData);
-        // Here you would handle the form submission, e.g., send to an API
-        alert('Thank you for your request! We will get back to you soon.');
         setFormData({
           name: '',
           email: '',
@@ -45,6 +47,7 @@ export default function Cta() {
     return (
         
       <div id="contact" className="bg-gradient-to-r from-emerald-800 to-emerald-600 py-16">
+      <Toast message={succesMessage} ></Toast>
         {/* CTA & Quote Request Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
