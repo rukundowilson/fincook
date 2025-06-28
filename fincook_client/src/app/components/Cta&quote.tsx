@@ -12,7 +12,7 @@ export default function Cta() {
         email: '',
         phone: '',
         message: '',
-        consultationType: 'virtual'
+        consultationType: 'remote'
       });
       const [succesMessage, setSuccessMessage] =useState<any>()
       const [errorMessage, setErrorMessage] =useState<String>()
@@ -31,7 +31,7 @@ export default function Cta() {
         try{
           const response = await api.post("/quote/new",formData);
           console.log(response)
-          setSuccessMessage(response.data)
+          setSuccessMessage(response.data.message)
         }
         catch(err){
           console.log(err)
@@ -41,14 +41,17 @@ export default function Cta() {
           email: '',
           phone: '',
           message: '',
-          consultationType: 'virtual'
+          consultationType: 'remote'
         });
       };
     return (
         
       <div id="contact" className="bg-gradient-to-r from-emerald-800 to-emerald-600 py-16">
-      <Toast message={succesMessage} ></Toast>
         {/* CTA & Quote Request Section */}
+
+      {succesMessage && (
+        <Toast message={succesMessage} ></Toast>
+      )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
           <div className="md:grid md:grid-cols-2">
@@ -136,8 +139,8 @@ export default function Cta() {
                       onChange={handleInputChange}
                       className="mt-1 block w-full pl-3 pr-10 py-2 text-base border border-gray-300 focus:outline-none focus:ring-emerald-500 focus:border-emerald-500 sm:text-sm rounded-md"
                     >
-                      <option value="virtual">Virtual Meeting</option>
-                      <option value="inperson">Face-to-Face Meeting</option>
+                      <option value="remote">Virtual Meeting</option>
+                      <option value="in-person">Face-to-Face Meeting</option>
                     </select>
                   </div>
                   <div>

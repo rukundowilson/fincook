@@ -13,7 +13,7 @@ const Toast = ({ message }: ToastProps) => {
   return (
     <div
       id="toast-success"
-      className="fixed bottom-5 right-5 flex items-center w-full max-w-xs p-4 mb-4 text-white bg-emerald-500 rounded-lg shadow-sm dark:text-white dark:bg-emerald-500"
+      className="fixed top-0 z-7000 left-0 flex items-center w-full max-w-xs p-4 mb-4 text-white bg-emerald-500 rounded-lg shadow-sm dark:text-white dark:bg-emerald-500"
       role="alert"
     >
       <div className="inline-flex items-center justify-center shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
