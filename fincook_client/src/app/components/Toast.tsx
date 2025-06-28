@@ -3,7 +3,7 @@ import { useState } from "react";
 import React from 'react';
 
 interface ToastProps{
-    message : string,
+    message : String,
 }
 
 const Toast = ({ message }: ToastProps) => {

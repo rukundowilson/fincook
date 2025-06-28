@@ -32,17 +32,24 @@ export default function Cta() {
           const response = await api.post("/quote/new",formData);
           console.log(response)
           setSuccessMessage(response.data.message)
-        }
-        catch(err){
-          console.log(err)
-        }
-        setFormData({
+
+          setFormData({
           name: '',
           email: '',
           phone: '',
           message: '',
           consultationType: 'remote'
         });
+        }
+        catch (err) {
+          if (err instanceof Error) {
+            console.log(err);
+            setErrorMessage(err.message);
+          } else {
+            console.log('Unexpected error', err);
+            setErrorMessage('An unexpected error occurred');
+          }
+        }
       };
     return (
         
@@ -51,6 +58,9 @@ export default function Cta() {
 
       {succesMessage && (
         <Toast message={succesMessage} ></Toast>
+      )}
+      {errorMessage && (
+        <Toast message={errorMessage} ></Toast>
       )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
