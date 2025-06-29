@@ -4,14 +4,11 @@ import Nav from '@/app/components/Nav';
 import Footer from '../components/Footer';
 
 interface FormData {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-  investmentExperience: string;
-  investmentGoals: string;
-  riskTolerance: string;
-  newsletter: boolean;
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone: string,
+  newsletter: boolean,
 }
 
 const SignupPage: React.FC = () => {
@@ -20,9 +17,6 @@ const SignupPage: React.FC = () => {
     lastName: '',
     email: '',
     phone: '',
-    investmentExperience: '',
-    investmentGoals: '',
-    riskTolerance: '',
     newsletter: true,
   });
 
@@ -247,27 +241,6 @@ const SignupPage: React.FC = () => {
                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
                         placeholder="+1 (555) 000-0000"
                       />
-                    </div>
-                    {/* Investment Goals */}
-                    <div>
-                      <label htmlFor="investmentGoals" className="block text-sm font-medium text-gray-700 mb-2">
-                        Primary Investment Goals *
-                      </label>
-                      <select
-                        id="investmentGoals"
-                        name="investmentGoals"
-                        value={formData.investmentGoals}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-colors"
-                      >
-                        <option value="">Select your primary goal</option>
-                        <option value="wealth-building">Long-term Wealth Building</option>
-                        <option value="retirement">Retirement Planning</option>
-                        <option value="income">Generate Income</option>
-                        <option value="short-term">Short-term Growth</option>
-                        <option value="diversification">Portfolio Diversification</option>
-                      </select>
                     </div>
 
                     {/* Newsletter Checkbox */}

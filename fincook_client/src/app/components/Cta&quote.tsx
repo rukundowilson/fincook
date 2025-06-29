@@ -57,10 +57,10 @@ export default function Cta() {
         {/* CTA & Quote Request Section */}
 
       {succesMessage && (
-        <Toast message={succesMessage} ></Toast>
+        <Toast message={succesMessage} bg_style={"bg-emerald-500"} ></Toast>
       )}
       {errorMessage && (
-        <Toast message={errorMessage} ></Toast>
+        <Toast message={errorMessage} bg_style={"bg-red-500"} ></Toast>
       )}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-xl overflow-hidden">
